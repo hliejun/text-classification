@@ -51,10 +51,10 @@ public class FileHandler {
         }
     }
 
-    public String[] getStopWordList() {
+    public List<String> getStopWordList() {
         if (existingFileData != null) {
             String linesString = new String(existingFileData);
-            return linesString.split("\\n+");
+            return new ArrayList<String>(Arrays.asList(linesString.split("\\n+")));
         } else {
             return null;
         }
